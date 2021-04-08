@@ -4,3 +4,7 @@
 #home{
     color: white;
 }
+.navbar-collapse{
+    display: flex !important;
+    justify-content: center;
+}
