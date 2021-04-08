@@ -59,11 +59,6 @@ const Formsubmit =()=>{
     .catch(function (error) {
       console.log(error);
     });
-
-    
-  
- 
-
 },[])
  
  
@@ -101,7 +96,14 @@ const Formsubmit =()=>{
                 console.log(error);
               });
               
-              
+              setTodos([...todos,{
+                id:id,
+                title: input,
+                status: false,
+                "date": "2021-02-07"
+            }])
+            setId(id+1)
+            setInput("")
 
               var token= localStorage.getItem("key")
               var config = {
@@ -117,13 +119,13 @@ const Formsubmit =()=>{
               axios(config)
               .then(res=> {
               console.log(res.data)
-              setTodos(res.data)
+            
               })
               .catch(function (error) {
                 console.log(error);
               })};
             
-            setInput("")
+            
         
     }
 
