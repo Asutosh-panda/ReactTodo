@@ -23,7 +23,7 @@ const Formsubmit =()=>{
     var token= localStorage.getItem("key")
     var config = {
       method: 'get',
-      url: 'http://127.0.0.1:8000/index',
+      url: 'https://restbackendtodo.herokuapp.com/index',
       headers: { 
         'Authorization': `Bearer ${token}`, 
         'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ const Formsubmit =()=>{
     var data=''
     var config = {
       method: 'get',
-      url: 'http://127.0.0.1:8000/current_user/',
+      url: 'https://restbackendtodo.herokuapp.com/current_user/',
       headers: { 
         'Authorization': `Bearer ${token}`, 
         'Content-Type': 'application/json'
@@ -87,7 +87,7 @@ const Formsubmit =()=>{
               
               var config = {
                 method: 'post',
-                url: 'http://127.0.0.1:8000/indexpost',
+                url: 'https://restbackendtodo.herokuapp.com/indexpost',
                 headers: { 
                   'Authorization': `Bearer ${token}`, 
                   'Content-Type': 'application/json'
@@ -106,7 +106,7 @@ const Formsubmit =()=>{
               var token= localStorage.getItem("key")
               var config = {
                 method: 'get',
-                url: 'http://127.0.0.1:8000/index',
+                url: 'https://restbackendtodo.herokuapp.com/index',
                 headers: { 
                   'Authorization': `Bearer ${token}`, 
                   'Content-Type': 'application/json'

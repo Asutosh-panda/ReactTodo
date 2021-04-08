@@ -4,7 +4,7 @@ import "./App.css";
 import {Switch,Route} from 'react-router-dom';
 import Nav from "./Nav"
 import Login from "./login"
-
+import Register from "./Register"
 const App=()=>{
   return <>
   <Nav/>
@@ -14,6 +14,7 @@ const App=()=>{
    <Switch>
      <Route path ="/login"><Login/></Route>
    <Route  path="/formsubmit" ><Formsubmit/></Route>
+   <Route path="/register" ><Register/></Route>
    </Switch>
   </div>
   </>

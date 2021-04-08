@@ -14,6 +14,9 @@ const Nav = ()=>{
               <li className="nav-item mx-4 pd-4">
                 <NavLink to ="/formsubmit" id ="home">TODO</NavLink>
               </li>
+              <li className="nav-item mx-4 pd-4">
+                <NavLink to ="/register" id ="home">Resgister</NavLink>
+              </li>
             </ul>
           </div>
         </div>

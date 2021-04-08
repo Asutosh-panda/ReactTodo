@@ -25,7 +25,7 @@ const Todo=({setTodos,todos,text,id,setStatus,value})=>{
           console.log("value id =",value.id)
           var config = {
             method: 'patch',
-            url: `http://127.0.0.1:8000/indexput/${value.id}`,
+            url: `https://restbackendtodo.herokuapp.com/indexput/${value.id}`,
             headers: { 
               'Authorization': `Bearer ${token}`, 
               'Content-Type': 'application/json'
@@ -55,7 +55,7 @@ const Todo=({setTodos,todos,text,id,setStatus,value})=>{
         var data=''
         var config = {
             method: 'delete',
-            url: `http://127.0.0.1:8000/indexdelete/${value.id}`,
+            url: `https://restbackendtodo.herokuapp.com/indexdelete/${value.id}`,
             headers: { 
               'Authorization': `Bearer ${token}`, 
               'Content-Type': 'application/json'
