@@ -2,6 +2,7 @@ import  React from 'react';
 import {useState} from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router';
+import Loading from './Loading';
 
 const Register =()=>{
     const [name,setName]=useState('');
@@ -9,7 +10,8 @@ const Register =()=>{
     const [password1,setPassword1]=useState('');
     const [password2,setPassword2]=useState('');
     const [token,setToken]=useState(false)
-    
+    const [loading,setLoading] = useState(false)
+
     let flag = false
     function nameHandler(e){
         setName(e.target.value)
@@ -24,6 +26,7 @@ const Register =()=>{
 
     function submitHandler(e)
     {
+      setLoading(true)
     e.preventDefault()
     axios.post("https://restbackendtodo.herokuapp.com/registerpage",{
         "username":name,
@@ -37,10 +40,14 @@ const Register =()=>{
            console.log('invalid form')
         else
           setToken(true)
+        setLoading(false)
     })
     .catch(err=>console.log(e))
    
   
+  }
+  if(loading){
+    <Loading/>
   }
  if(token)
  {

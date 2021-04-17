@@ -8,9 +8,9 @@
 .task,.taskcompleted{
     
     width: 20vw;
-    font-family: initia;
+    font-family: initial;
     padding: 2vh;
-    border-bottom:2px solid cyan ;
+    /* border-bottom:2px solid cyan ; */
     /* text-decoration: line-through; */
 }
 .taskcompleted{
@@ -22,8 +22,10 @@
     flex-direction: column;
     /* border: 2px solid aqua; */
     margin-bottom: 2vh;
-    background-color: aliceblue;
     align-items: center;
+}
+.icons{
+    border-bottom: 2px solid cyan;
 }
 
 @media only screen and (max-width: 900px) {

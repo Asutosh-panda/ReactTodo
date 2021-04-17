@@ -5,6 +5,7 @@ import {Switch,Route} from 'react-router-dom';
 import Nav from "./Nav"
 import Login from "./login"
 import Register from "./Register"
+import Loginvector from "./Loginvector"
 const App=()=>{
   return <>
   <Nav/>
@@ -15,6 +16,7 @@ const App=()=>{
      <Route path ="/login"><Login/></Route>
    <Route  path="/formsubmit" ><Formsubmit/></Route>
    <Route path="/register" ><Register/></Route>
+   <Route path ="/vector" ><Loginvector/></Route>
    </Switch>
   </div>
   </>

@@ -1,0 +1,13 @@
+input{
+    
+}
+
+@media screen and (max-width:600px){
+    input{
+        width: 75%;
+    }
+
+    .loginbox{
+        flex-direction: column-reverse !important;
+    }
+}

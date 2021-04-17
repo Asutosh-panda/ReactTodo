@@ -4,9 +4,10 @@ import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone';
 import { Button } from "@material-ui/core";
 import axios from "axios"
+import Note from './Note'
 const Todo=({setTodos,todos,text,id,setStatus,value})=>{
 
-  
+
     const completeClick=()=>{
       
      const newtodo= (todos.map(element=>{
@@ -70,14 +71,14 @@ const Todo=({setTodos,todos,text,id,setStatus,value})=>{
           .catch(function (error) {
             console.log(error);
           });
-          
+         
 
     }
     return <>
        <div className="Todobox" >
            <div className="taskcontainer">
-               <div className= {`task${value.status ? "completed":""}`}>
-                     {text}
+               <div className= 'task'>
+               <Note value={value}/>
                      </div>
 
                      <div className="icons">

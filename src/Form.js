@@ -91,7 +91,26 @@ const Formsubmit =()=>{
               };
               
               axios(config)
-              .then(res=>{})
+              .then(res=>{  var token= localStorage.getItem("key")
+              var config = {
+                method: 'get',
+                url: 'https://restbackendtodo.herokuapp.com/index',
+                headers: { 
+                  'Authorization': `Bearer ${token}`, 
+                  'Content-Type': 'application/json'
+                },
+                data : data
+              };
+              
+              axios(config)
+              .then(res=> {
+              setTodos(res.data)
+              console.log(res.data)
+            
+              })
+              .catch(function (error) {
+                console.log(error);
+              })})
               .catch(function (error) {
                 console.log(error);
               });
@@ -105,25 +124,7 @@ const Formsubmit =()=>{
             setId(id+1)
             setInput("")
 
-              var token= localStorage.getItem("key")
-              var config = {
-                method: 'get',
-                url: 'https://restbackendtodo.herokuapp.com/index',
-                headers: { 
-                  'Authorization': `Bearer ${token}`, 
-                  'Content-Type': 'application/json'
-                },
-                data : data
-              };
-              
-              axios(config)
-              .then(res=> {
-              console.log(res.data)
-            
-              })
-              .catch(function (error) {
-                console.log(error);
-              })};
+             };
             
             
         
