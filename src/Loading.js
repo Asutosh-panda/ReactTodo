@@ -1,11 +1,14 @@
 import React from "react";
 import Spinner from 'react-bootstrap/Spinner';
 import './Loading.css'
-import { SpinnerDotted } from 'spinners-react';
+import Loader from "react-loader-spinner";
 const Loading =()=>{
-    return <div className="loading">
-   <SpinnerDotted size={90} thickness={101} speed={155} color="rgba(57, 133, 172, 1)" />
-    </div>
+   console.log("laoding from ..")
+    return <div className="loadingpage">
+      <div className="loading">
+<Loader type="BallTriangle" color="#00BFFF" height={80} width={80} />
+</div>
+ </div>
 }
 
 export default Loading;

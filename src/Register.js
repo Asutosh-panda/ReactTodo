@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Redirect } from 'react-router';
 import Loading from './Loading';
 
+
 const Register =()=>{
     const [name,setName]=useState('');
     const [userid,setUserid]=useState('') ;
@@ -35,19 +36,20 @@ const Register =()=>{
 
     })
     .then(res=>{
-       
+      setLoading(false)
         if(res.data==="error")
            console.log('invalid form')
         else
           setToken(true)
-        setLoading(false)
+        
     })
     .catch(err=>console.log(e))
    
   
   }
   if(loading){
-    <Loading/>
+    return <Loading/>
+    console.log("loading....")
   }
  if(token)
  {
