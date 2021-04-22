@@ -6,7 +6,7 @@ import "./Loginvector.css"
 const Note=({value})=>{
     const status = value.status
     return<>
-       <svg width="350" height="350" id={value.id} viewBox="120 0 250 380" fill="blue" xmlns="http://www.w3.org/2000/svg">
+       <svg width="350" height="350" id={value.id} viewBox="120 -100 250 480" fill="blue" xmlns="http://www.w3.org/2000/svg">
 <g id="lemmling_Blank_sticky_note 1">
 <g id="layer1">
 <path id="path3162" d="M77.8216 65.3657C121.996 53.8796 192.967 52.0407 192.967 52.0407L395.301 45.1774L404.125 195.204C404.125 195.204 408.202 282.713 432.568 326.431C365.166 345.438 248.261 350.824 248.261 350.824L83.5823 356.411L68.4979 99.7766C68.4979 99.7766 64.3615 79.0472 77.8216 65.3657V65.3657Z" fill="black" fill-opacity="0.39216"/>

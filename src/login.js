@@ -33,13 +33,16 @@ const Login=()=>{
 
     })
     .then(res=>{
-   
+        console.log("respose is -<>",res)
         setToken(res.data.access)
         localStorage.setItem("key",res.data.access)
        setLoading(false)
        
     })
-    .catch(err=>console.log(e))
+    .catch(err=>{alert("Invalid credentials");
+        setLoading(false)
+      return <Redirect to="login"/>
+  })
    
   
   }

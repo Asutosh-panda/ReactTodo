@@ -7,7 +7,7 @@
 }
 .task,.taskcompleted{
     
-    width: 20vw;
+    width: 30vw;
     font-family: initial;
     padding: 2vh;
     /* border-bottom:2px solid cyan ; */
@@ -30,7 +30,7 @@
 
 @media only screen and (max-width: 900px) {
     .task,.taskcompleted{
-        width: 78vw;
+        width: 100vw;
     }
    }
 
@@ -41,11 +41,12 @@
 
 @keyframes aniani{
     0%{
-        transform: translateY(-20px) rotateX(-120deg) ;
+        transform: translateY(-0px) rotateX(-120deg) ;
 
     }
     100%{
-        transform: translateY(-300px) rotateX(-360deg) ;
+        transform: translateY(-600px) rotateX(-360deg) ;
+        opacity: 0;
        
     }
 }
