@@ -30,6 +30,38 @@
 
 @media only screen and (max-width: 900px) {
     .task,.taskcompleted{
-        width: 50vw;
+        width: 78vw;
     }
    }
+
+.animate{
+    animation: aniani 2s ease-in-out ;
+    animation-delay: 0.3s;
+}
+
+@keyframes aniani{
+    0%{
+        transform: translateY(-20px) rotateX(-120deg) ;
+
+    }
+    100%{
+        transform: translateY(-300px) rotateX(-360deg) ;
+       
+    }
+}
+.anim{
+    animation: ani 1s ease-in-out alternate;
+}
+@keyframes ani{
+    0%{
+       display: none !important;
+       opacity: 0;
+    }
+    50%{
+        
+    }
+    100%{
+        
+       opacity: 0;
+    }
+}

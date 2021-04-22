@@ -3,6 +3,7 @@ import {useState} from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router';
 import Loading from './Loading';
+import Registervector from './Registervector';
 
 
 const Register =()=>{
@@ -49,7 +50,7 @@ const Register =()=>{
   }
   if(loading){
     return <Loading/>
-    console.log("loading....")
+ 
   }
  if(token)
  {
@@ -57,13 +58,14 @@ const Register =()=>{
      return <Redirect to="/login"/>
  }
 else{
-    return <div className="loginbox" style={{display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"center"}}>
+    return <div className="loginbox" style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
      <form style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}} onSubmit={submitHandler}>
          <input type ="text" onChange={nameHandler} style={{margin:"2px"}} value={name} placeholder="enter the name"></input>
          <input type ="password" onChange ={ passwordHandler1} style={{margin:"2px"}} placeholder="enter the password"></input>
          <input type ="password" onChange ={ passwordHandler2} style={{margin:"2px"}} placeholder="enter the password again"></input>
          <button type="submit" style={{margin:"2px"}} >submit</button>
      </form>
+     <Registervector/>
      </div>
 
 }

@@ -2,8 +2,20 @@ import React from 'react';
 import {NavLink} from 'react-router-dom'
 import "./Nav.css"
 
+// function myFunction() {
+//   console.log("yep")
+//   // var x = document.getElementById("navbar-collapse");
+//   // if (x.style.display === "flex") {
+//   //   x.style.display = "none";
+//   // } else {
+//   //   x.style.display = "flex";
+//   // }
+// }
+
+
 const Nav = ()=>{
-    return <>
+
+  return <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -18,9 +30,13 @@ const Nav = ()=>{
                 <NavLink to ="/register" id ="home">Resgister</NavLink>
               </li>
             </ul>
+            
           </div>
+
         </div>
+      
       </nav>
+
       </>
 }
 

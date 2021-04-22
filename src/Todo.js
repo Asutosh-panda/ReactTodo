@@ -50,28 +50,42 @@ const Todo=({setTodos,todos,text,id,setStatus,value})=>{
     
     }
     const deleteClick=()=>{
-        todos=todos.filter(e=>e.id!=value.id)
-        setTodos(todos)
-        var token=localStorage.getItem("key")
-        var data=''
-        var config = {
-            method: 'delete',
-            url: `https://restbackendtodo.herokuapp.com/indexdelete/${value.id}`,
-            headers: { 
-              'Authorization': `Bearer ${token}`, 
-              'Content-Type': 'application/json'
-            },
-            data : data
-          };
-          
-          axios(config)
-          .then(function (response) {
-            console.log(JSON.stringify(response.data));
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-         
+        let dd=todos.filter(e=>e.id==value.id)
+        console.log("deleted is -> ",dd)
+        let d=document.getElementById(`${value.id}`)
+        let d1=document.getElementsByClassName(`${value.id}`)[0].style.opacity=0
+        d.classList.add("animate")
+       
+      
+        setTimeout(()=>{
+           d.classList.remove("animate")
+           let d1=document.getElementsByClassName(`${value.id}`)[0].style.opacity=1
+        },2300)
+        setTimeout(()=>{
+          todos=todos.filter(e=>e.id!=value.id)
+          setTodos(todos)
+          var token=localStorage.getItem("key")
+          var data=''
+          var config = {
+              method: 'delete',
+              url: `https://restbackendtodo.herokuapp.com/indexdelete/${value.id}`,
+              headers: { 
+                'Authorization': `Bearer ${token}`, 
+                'Content-Type': 'application/json'
+              },
+              data : data
+            };
+            
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+           
+        },2300)
+      
 
     }
     return <>
