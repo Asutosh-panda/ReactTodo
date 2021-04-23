@@ -33,7 +33,7 @@ const Login=()=>{
 
     })
     .then(res=>{
-        console.log("respose is -<>",res)
+       
         setToken(res.data.access)
         localStorage.setItem("key",res.data.access)
        setLoading(false)

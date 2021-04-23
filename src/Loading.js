@@ -1,5 +1,4 @@
 import React from "react";
-import Spinner from 'react-bootstrap/Spinner';
 import './Loading.css'
 import Loader from "react-loader-spinner";
 const Loading =()=>{

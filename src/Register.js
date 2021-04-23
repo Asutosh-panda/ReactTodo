@@ -4,17 +4,19 @@ import axios from 'axios'
 import { Redirect } from 'react-router';
 import Loading from './Loading';
 import Registervector from './Registervector';
+import {Alert} from "react-bootstrap"
+import Alertmssg from './Alertmssg';
 
 
 const Register =()=>{
     const [name,setName]=useState('');
-    const [userid,setUserid]=useState('') ;
+    const [move,setMove]=useState(false) ;
     const [password1,setPassword1]=useState('');
     const [password2,setPassword2]=useState('');
-    const [token,setToken]=useState(false)
+    const [alerting,setAlerting]=useState(false)
     const [loading,setLoading] = useState(false)
-
-    let flag = false
+    const [mmsg,setMssg]=useState("")
+    
     function nameHandler(e){
         setName(e.target.value)
       }
@@ -37,11 +39,28 @@ const Register =()=>{
 
     })
     .then(res=>{
-      setLoading(false)
-        if(res.data==="error")
-           console.log('invalid form')
-        else
-          setToken(true)
+      let d= res.data
+      console.log(d)
+      if (Object.keys(d).length==0)
+      {
+          console.log("redirecting")
+          setLoading(false)
+          setMove(true) 
+        }
+      else{
+        if(res.data.username)
+             setMssg(res.data.username[0])
+        if(res.data.password1)
+             setMssg(res.data.password1[0])
+        if(res.data.password2)
+             setMssg(res.data.password2[0])
+        setLoading(false)
+        setMove(false)
+        setAlerting(true)
+        
+      } 
+       
+      
         
     })
     .catch(err=>console.log(e))
@@ -52,21 +71,26 @@ const Register =()=>{
     return <Loading/>
  
   }
- if(token)
- {
-     console.log("flag =",token)
-     return <Redirect to="/login"/>
- }
+
+  if(move)
+  {
+    return <Redirect to="/login"/>
+  }
+
 else{
-    return <div className="loginbox" style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
+    return <>
+    {alerting? <Alertmssg mssg={mmsg}/>:console.log("no")}
+    <div className="loginbox" style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}}>
      <form style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}} onSubmit={submitHandler}>
          <input type ="text" onChange={nameHandler} style={{margin:"2px"}} value={name} placeholder="enter the name"></input>
+        
          <input type ="password" onChange ={ passwordHandler1} style={{margin:"2px"}} placeholder="enter the password"></input>
          <input type ="password" onChange ={ passwordHandler2} style={{margin:"2px"}} placeholder="enter the password again"></input>
          <button type="submit" style={{margin:"2px"}} >submit</button>
      </form>
      <Registervector/>
      </div>
+     </>
 
 }
 }

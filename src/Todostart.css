@@ -1,0 +1,141 @@
+.Todostart{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    overflow-x: hidden;
+}
+@media only screen and (max-width:991px){
+    .Todostart{
+        display: grid;
+    }
+}
+.checks{
+    display: grid;
+    grid-template-rows: 25% 25% 25%;
+    scale: 0.7;
+}
+@media only screen and (max-width:1550px){
+    .Check{
+        scale: 0.7;
+    }
+    .checks{
+        display: grid;
+        grid-template-rows: 20% 20% 20%;
+    }
+}
+@media only screen and (max-width:1320px){
+    .Check{
+        scale: 0.5;
+    }
+    .checks{
+        display: grid;
+        grid-template-rows: 10% 10% 10%;
+    }
+}
+@media only screen and (max-width:1200px){
+    
+    .Todostart{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .checks{
+        display: grid;
+        grid-template-columns: 15% 15% 30%;
+    }
+}
+@media only screen and (max-width:860px){
+    .cardboard{
+        scale: 1.5;
+    }
+    .checks{
+        display: grid;
+        grid-template-rows: 15% 15% 15%;
+    }
+}
+@media only screen and (max-width:500px){
+    .cardboard{
+        scale: 1;
+    }
+    .checks{
+        display: grid;
+        grid-template-rows: 14% 14% 34%;
+    }
+}
+@media only screen and (max-width:380px){
+    .cardboard{
+        scale: 1;
+    }
+    .checks{
+        display: none;
+        
+    }
+}
+
+#boxs{
+    animation: boxanim 5s linear infinite;
+}
+#boxs :nth-child(1)
+{
+    animation: boxanim 5s linear infinite alternate;
+    animation-delay: 1s;
+}
+#boxs :nth-child(2)
+{
+    animation: boxanim 5s linear infinite alternate;
+     animation-delay: 2s;
+}
+#boxs :nth-child(3){
+    animation: boxanim 5s linear infinite alternate;
+     animation-delay: 3s;
+}
+
+@keyframes boxanim{
+    0%{
+        fill: white;
+    }
+    50%{
+        fill: white;
+    }
+    51%{
+        fill: greenyellow;
+    }
+    100%{
+        fill: greenyellow;
+    }
+}
+
+#paths{
+   
+
+}
+
+#paths :nth-child(2)
+{
+    animation: lineanim 5s linear infinite alternate;
+    animation-delay: 1s;
+}
+#paths :nth-child(1)
+{
+    animation: lineanim 5s linear infinite alternate;
+     animation-delay: 2s;
+}
+#paths :nth-child(3){
+    animation: lineanim 5s linear infinite alternate;
+     animation-delay: 3s;
+}
+
+@keyframes lineanim{
+    0%{
+        opacity: 0;
+    }
+    50%{
+      opacity: 0;
+    }
+    51%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
