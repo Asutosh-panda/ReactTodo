@@ -9,7 +9,7 @@ const Alertmssg=({mssg})=>{
       return (
         <Alert variant="warning" style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center"}} onClose={() => setShow(false)} dismissible>
           <Alert.Heading>WARNING !!!</Alert.Heading>
-          <h1>{mssg}</h1>
+          <h4>{mssg}</h4>
         </Alert>
       );
     }
