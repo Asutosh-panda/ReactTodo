@@ -25,14 +25,14 @@ const Nav = ()=>{
         <div className="container-fluid" >
           <div className="navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item mx-4 pd-4" style={{textDecoration:"none"}} >
+              <li className="nav-item mx-4 mb-3 pd-4" style={{textDecoration:"none"}} >
               <NavLink to ="/login" id="home">Login</NavLink>
               </li>
-              <li className="nav-item mx-4 pd-4">
+              <li className="nav-item mx-4 mb-3 pd-4">
                 <NavLink to ="/formsubmit" id ="home">TODO</NavLink>
               </li>
-              <li className="nav-item mx-4 pd-4">
-                <NavLink to ="/register" id ="home">Resgister</NavLink>
+              <li className="nav-item mx-4 mb-3 pd-4">
+                <NavLink to ="/register" id ="home">Register</NavLink>
               </li>
             </ul>
             
